@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="webhook-test-suite.xml" />
+	<munit:test name="webhook-test-suite-get:\webhooks\(ClientName)\outbound:webhook-configTest" description="Test" doc:id="10588e2e-bbbf-4659-8a7a-6e5979b06995" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\webhooks\(ClientName)\outbound:webhook-config" doc:id="1fbc2ac0-02a4-44ef-a85f-c4c878b562de" name="get:\webhooks\(ClientName)\outbound:webhook-config"/>
+		</munit:execution>
+	</munit:test>
+
+</mule>
