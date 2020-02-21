@@ -9,7 +9,7 @@ pipeline {
       CH_REGION = 'eu-west-1'
       CH_WORKERS = '1'
       CH_WORKER_TYPE = 'MICRO'
-      CH_ORG = 'KONE Corporation'
+      CH_ORG = 'SabOrg'
       
       //-----------------END OF UPDATE------------------------------------------
       
