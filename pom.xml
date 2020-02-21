@@ -6,7 +6,7 @@
 		<groupId>71de0eef-a751-48a4-b3df-b21a565fbe5d</groupId>
 		<artifactId>parent-pom</artifactId>
 		<version>1.0.0</version>
-		<relativePath/>
+		<!--<relativePath/>-->
 	</parent>
 
 	<groupId>sab.org</groupId>
