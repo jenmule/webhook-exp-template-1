@@ -30,7 +30,7 @@ pipeline {
 
     agent any
     options {
-        office365ConnectorWebhooks([[name: 'mule-jenkins-connect', notifyBackToNormal: true, notifyFailure: true, notifyUnstable: true, url: 'https://outlook.office.com/webhook/'+"${MSTEAMS}"]])
+        office365ConnectorWebhooks([[name: 'mule-jenkins-connect', notifyBackToNormal: true, notifyFailure: true, notifyUnstable: true, url: 'https://outlook.office.com/webhook/'+"${env.MSTEAMS}"]])
     }
     stages {
         stage('Example') {
