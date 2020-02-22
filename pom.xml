@@ -47,7 +47,7 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>${project.groupId}</groupId>
+									<groupId>71de0eef-a751-48a4-b3df-b21a565fbe5d</groupId>
 									<artifactId>common-jenkinsfile-library</artifactId>
 									<version>${common.jenkinsfile.library.version}</version>
 									<classifier>mule-application</classifier>
