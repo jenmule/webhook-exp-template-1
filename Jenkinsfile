@@ -38,13 +38,13 @@ pipeline {
                 echo "Hello - ${MSTEAMS}"
             }
         }
-        stage('Unit Test') {
+        /*stage('Unit Test') {
             steps {
                 sh 'mvn clean test'
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'target\\site\\munit\\coverage', reportFiles: 'summary.html', reportName: 'Code Coverage', reportTitles: ''])
             }
         }
-       /*stage('Deploy CloudHub - DEV[feature*]') {
+       stage('Deploy CloudHub - DEV[feature*]') {
                when {
                 allOf { branch 'feature*'; environment name: 'DEPLOY_TARGET', value: 'CH' }
                }
