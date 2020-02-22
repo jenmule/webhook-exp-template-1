@@ -18,7 +18,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<common.jenkinsfile.library.version>1.0.2</common.jenkinsfile.library.version>
+		<common.jenkinsfile.library.version>1.0.8</common.jenkinsfile.library.version>
 		<maven.dependency.plugin.version>3.1.1</maven.dependency.plugin.version>
 	</properties>
 	
