@@ -44,7 +44,7 @@ pipeline {
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'target\\site\\munit\\coverage', reportFiles: 'summary.html', reportName: 'Code Coverage', reportTitles: ''])
             }
         }
-       stage('Deploy CloudHub - DEV[feature*]') {
+       /*stage('Deploy CloudHub - DEV[feature*]') {
                when {
                 allOf { branch 'feature*'; environment name: 'DEPLOY_TARGET', value: 'CH' }
                }
@@ -130,7 +130,7 @@ pipeline {
                 }
                 sh "mvn clean package deploy -P cloudhub -DmuleDeploy -DCH_ORG=\"$CH_ORG\" -DANYPOINT_USERNAME=$ANYPOINT_USR -DANYPOINT_PASSWORD=$ANYPOINT_PSW -DCH_ENV=${env.DEPLOY_TO_CH_ENV} -DCH_RGN=${env.DEPLOY_TO_CH_REGION} -DCH_WORKERTYPE=${env.DEPLOY_TO_CH_WORKER_TYPE} -DCH_WORKERS=${env.DEPLOY_TO_CH_WORKERS} -DBUILD_NAME=${env.BUILD_NAME}"
               }
-        }
+        }*/
         /*stage('Deploy ARM') {
             steps {
                 sh "mvn deploy -P arm -DANYPOINT_USERNAME=$ANYPOINT_USR -DANYPOINT_PASSWORD=$ANYPOINT_PSW -DARM_ENV=$DEPLOY_TO -DARM_TARGET=vm-mule -DARM_TARGET_TYPE=server"
