@@ -36,7 +36,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo "Hello - ${MSTEAMS}"
+                echo "Hello - ${env.MS_TEAMS}"
             }
         }
         /*stage('Unit Test') {
