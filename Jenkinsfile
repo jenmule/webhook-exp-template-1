@@ -15,7 +15,7 @@ pipeline {
       
       
       ANYPOINT = credentials("ANYPOINT")
-      //MSTEAMS_TOKEN = credentials("MSTEAMS-P1")
+      ///MSTEAMS_TOKEN = credentials("MSTEAMS-P1")
       MS_TOKEN4 = 'https://outlook.office.com/webhook/64805a1d-9de2-48ae-b900-0adbb9f22248@22ddce65-9770-4012-94f0-da65409d3999/JenkinsCI/86a097bf52844bf785930150473aa4fb/82ed54e0-8f97-4b40-96f8-94a9a532f7d0'
       //CloudHub Enviroments
       CH_ENV_DEV = 'DEV'
