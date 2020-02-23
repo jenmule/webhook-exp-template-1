@@ -31,7 +31,7 @@ pipeline {
 
     agent any
     options {
-        office365ConnectorWebhooks([[name: "mule-jenkins", notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifyRepeatedFailure: true, notifySuccess: true, notifyUnstable: true, startNotification: true, url: "${env.MS_TOKEN4}"]])
+        office365ConnectorWebhooks([[name: 'mule-jenkins', notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifyRepeatedFailure: true, notifySuccess: true, notifyUnstable: true, startNotification: true, url: '${env.MS_TOKEN4}']])
     }
     stages {
         stage('Example') {
