@@ -1,7 +1,7 @@
 pipeline {
 
     environment {
-      
+
       //----------------UPDATE HERE--------------------------------------------
       // CloudHub (CH) | Mule China Onprem (ARM_C) | Mule EU Onprem (ARM_EU)
       DEPLOY_TARGET = 'CH'
@@ -9,14 +9,12 @@ pipeline {
       CH_REGION = 'eu-west-1'
       CH_WORKERS = '1'
       CH_WORKER_TYPE = 'MICRO'
-      CH_ORG = 'SabOrg'
-      
+      CH_ORG = 'KONE Corporation'
+
       //-----------------END OF UPDATE------------------------------------------
-      
-      
+
+
       ANYPOINT = credentials("ANYPOINT")
-      ///MSTEAMS_TOKEN = credentials("MSTEAMS-P1")
-      MS_TOKEN4 = 'https://outlook.office.com/webhook/64805a1d-9de2-48ae-b900-0adbb9f22248@22ddce65-9770-4012-94f0-da65409d3999/JenkinsCI/86a097bf52844bf785930150473aa4fb/82ed54e0-8f97-4b40-96f8-94a9a532f7d0'
       //CloudHub Enviroments
       CH_ENV_DEV = 'DEV'
       CH_ENV_QA = 'QA'
@@ -31,17 +29,17 @@ pipeline {
 
     agent any
     options {
-        office365ConnectorWebhooks([[name: 'mule-jenkins', notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifyRepeatedFailure: true, notifySuccess: true, notifyUnstable: true, startNotification: true, url: '${env.MS_TOKEN4}']])
+        office365ConnectorWebhooks([[name: 'mule-jenkins', notifyBackToNormal: true, notifyFailure: true, notifyUnstable: true, url: 'https://outlook.office.com/webhook/64805a1d-9de2-48ae-b900-0adbb9f22248@22ddce65-9770-4012-94f0-da65409d3999/JenkinsCI/86a097bf52844bf785930150473aa4fb/82ed54e0-8f97-4b40-96f8-94a9a532f7d0']])
     }
     stages {
         stage('Example') {
             steps {
-                echo "Hello - ${env.MS_TOKEN4}"
+                echo "Test"
             }
         }
-        /*stage('Unit Test') {
+        stage('Unit Test') {
             steps {
-                sh 'mvn clean testd'
+                sh 'mvn clean test'
                 publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'target\\site\\munit\\coverage', reportFiles: 'summary.html', reportName: 'Code Coverage', reportTitles: ''])
             }
         }
@@ -97,7 +95,7 @@ pipeline {
           				} else {
           				        env.BUILD_NAME = "${env.CH_ENV_QA}-${env.API_NAME}-${env.VERSION}"
             					env.D_BUILD_NAME = "${env.BUILD_NAME}".replace('.', '-')
-          				}             		
+          				}
                 		  }
                       sh "mvn clean package deploy -P cloudhub -DmuleDeploy -DCH_ORG=\"$CH_ORG\" -DANYPOINT_USERNAME=$ANYPOINT_USR -DANYPOINT_PASSWORD=$ANYPOINT_PSW -DCH_ENV=${env.DEPLOY_TO_CH_ENV} -DCH_RGN=${env.DEPLOY_TO_CH_REGION} -DCH_WORKERTYPE=${env.DEPLOY_TO_CH_WORKER_TYPE} -DCH_WORKERS=${env.DEPLOY_TO_CH_WORKERS} -DBUILD_NAME=${env.D_BUILD_NAME}"
                }
@@ -131,7 +129,7 @@ pipeline {
                 }
                 sh "mvn clean package deploy -P cloudhub -DmuleDeploy -DCH_ORG=\"$CH_ORG\" -DANYPOINT_USERNAME=$ANYPOINT_USR -DANYPOINT_PASSWORD=$ANYPOINT_PSW -DCH_ENV=${env.DEPLOY_TO_CH_ENV} -DCH_RGN=${env.DEPLOY_TO_CH_REGION} -DCH_WORKERTYPE=${env.DEPLOY_TO_CH_WORKER_TYPE} -DCH_WORKERS=${env.DEPLOY_TO_CH_WORKERS} -DBUILD_NAME=${env.BUILD_NAME}"
               }
-        }*/
+        }
         /*stage('Deploy ARM') {
             steps {
                 sh "mvn deploy -P arm -DANYPOINT_USERNAME=$ANYPOINT_USR -DANYPOINT_PASSWORD=$ANYPOINT_PSW -DARM_ENV=$DEPLOY_TO -DARM_TARGET=vm-mule -DARM_TARGET_TYPE=server"
