@@ -31,7 +31,8 @@ pipeline {
 
     agent any
     options {
-        office365ConnectorWebhooks([[name: "mule-jenkins", notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifyRepeatedFailure: true, notifySuccess: true, notifyUnstable: true, startNotification: true, url: "https://outlook.office.com/webhook/64805a1d-9de2-48ae-b900-0adbb9f22248@22ddce65-9770-4012-94f0-da65409d3999/JenkinsCI/86a097bf52844bf785930150473aa4fb/82ed54e0-8f97-4b40-96f8-94a9a532f7d0"]])
+        //office365ConnectorWebhooks([[name: "mule-jenkins", notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifyRepeatedFailure: true, notifySuccess: true, notifyUnstable: true, startNotification: true, url: "https://outlook.office.com/webhook/64805a1d-9de2-48ae-b900-0adbb9f22248@22ddce65-9770-4012-94f0-da65409d3999/JenkinsCI/86a097bf52844bf785930150473aa4fb/82ed54e0-8f97-4b40-96f8-94a9a532f7d0"]])
+        office365ConnectorWebhooks([[name: "mule-jenkins", notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifyRepeatedFailure: true, notifySuccess: true, notifyUnstable: true, startNotification: true, url: "${env.MS_TOKEN4}"]])
     }
     stages {
         stage('Example') {
