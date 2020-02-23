@@ -37,7 +37,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo "Hello - ${env.MS_TOKEN1}"
+                echo "Hello - ${env.MS_TOKEN2}"
             }
         }
         /*stage('Unit Test') {
